@@ -29,8 +29,12 @@ namespace QuickBuy.Dominio.Entidades
 
             if (!ItensPedido.Any())
                 AdicionarCritica("Pedido não pode estar sem itens");
+
             if(string.IsNullOrEmpty (CEP))
                 AdicionarCritica("CEP não pode estar vazio");
+
+            if (FormaPagamentoId == 0)
+                AdicionarCritica("Forma de pagamento não foi informada");
         }
     }
 }
